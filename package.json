@@ -1,0 +1,37 @@
+{
+  "name": "radar-sport-api",
+  "version": "1.0.0",
+  "description": "datas e estatisticas de das maiores casas de aposta",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorratts13/radar-sport-api.git"
+  },
+  "keywords": [
+    "bet365",
+    "betway",
+    "betFair",
+    "betano",
+    "rivalo",
+    "tipbet",
+    "888sport",
+    "sportingbet",
+    "radar-sports",
+    "radar-sport-api",
+    "s5",
+    "sport",
+    "api"
+  ],
+  "author": "Victor Ratts",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victorratts13/radar-sport-api/issues"
+  },
+  "homepage": "https://github.com/victorratts13/radar-sport-api#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
