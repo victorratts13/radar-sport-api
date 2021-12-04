@@ -1,8 +1,11 @@
-const sportapi = require('./index');
+const {sportApi, sportData} = require('./index');
 
-const sport = new sportapi('bet365', { getCommonContents: false });
+const betfair = new sportApi('betfair', { getCommonContents: false });
+const bet365 = new sportApi('bet365', { getCommonContents: false });
 
-// sport.allDefinitions().then((all) => {
+//sport.bettingHouse()
+
+// sport.allDefinitions('frame_data_id').then((all) => {
 //     console.log(all)
 // })
 
@@ -26,6 +29,6 @@ const sport = new sportapi('bet365', { getCommonContents: false });
 //     console.log(goals)
 // })
 
-sport.getInfo('Europe:Berlin', 'stats_season_meta', 76415).then((data) => {
-    console.log(data)
-})
+// sport.getInfo('Europe:Berlin', 'stats_season_meta', 76415).then((data) => {
+//     console.log(data)
+// })

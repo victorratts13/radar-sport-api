@@ -48,9 +48,9 @@ class sportApi {
         this.bettingHouse = bettingHouse;
     }
 
-    allDefinitions() {
+    allDefinitions(id = '5bc333c9e86aeb31125b4b35e9038eb5') {
         return new Promise((resolve, reject) => {
-            api.get(`https://s5.sir.sportradar.com/translations/common/en.5bc333c9e86aeb31125b4b35e9038eb5.json`).then((all) => {
+            api.get(`https://s5.sir.sportradar.com/translations/common/en.${id}.json`).then((all) => {
                 resolve(all.data)
             }).catch((err) => {
                 reject(err)
@@ -156,4 +156,4 @@ class sportData {
 }
 
 
-module.exports = (sportData);
+module.exports = {sportData, sportApi};

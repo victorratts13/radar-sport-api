@@ -29,10 +29,11 @@ Para instalar ultilize o npm gerenciar os pacotes
 apos a instalação, importe a biblioteca e defina a sua betPlace
 
 ~~~javascript
-//Importe a biblioteca
-const sports = require('radar-sport-api');
-//defina a casa de aposta
-const sport = new sportapi('bet365', { getCommonContents: false });
+//importe as bibliotecas de classe
+const {sportApi, sportData} = require('radar-sport-api');
+//contrua as classes
+const betfair = new sportApi('betfair', { getCommonContents: false });
+const bet365 = new sportApi('bet365', { getCommonContents: false });
 ~~~
 
 >- OBS: ```getCommonContents``` é um metodo ultilizado para obter os statos de servidores da sua casa de aposta. Caso haja necessidade de ultilizar, defina como ```true```
@@ -52,7 +53,7 @@ onde:
 para isso, execute como exemplo:
 
 ~~~javascript
-sport.getInfo('Europe:Berlin', 'stats_season_meta', 76415).then((data) => {
+betfair.getInfo('Europe:Berlin', 'stats_season_meta', 76415).then((data) => {
     console.log(data)
 })
 ~~~
@@ -194,6 +195,21 @@ região | hora
 -------|-------
 America:Argentina:Buenos_Aires | GMT-3
 Europe:Berlin | GMT+2
+
+## Metodo ``sportData`` Para analise de dados
+
+para api de analise informações em massa, utilize a classe ``sportData`` para obter as informações que precisa.
+
+```js
+//importe as bibliotecas de classe
+const {sportApi, sportData} = require('radar-sport-api');
+//contrua as classes
+const betfair = new sportData('betfair', { getCommonContents: false });
+
+betfair.getInfo('Europe:Berlin', 'stats_season_meta', 76415).then((data) => {
+    console.log(data)
+})
+```
 
 #### Notas de desenvolvimento
 
