@@ -127,16 +127,36 @@ class sportApi {
 }
 
 class sportData {
-    constructor(bettingHouse, configs) {
+    constructor(bettingHouse, configs = {languageId: '514d1e14ad5c11eeebf17ba7f5dc97ad', server: 'gismo', getCommonContents: false, lang: 'en'}) {
         this.configs = configs;
         this.bettingHouse = bettingHouse;
+    }
+
+    getByPath(path){
+        return new Promise((resolve, reject) => {
+            api.get(`${this.bettingHouse}/${path}`).then(rest => {
+                return resolve(rest.data)
+            }).catch(e => {
+                return reject(e)
+            })
+        })
+    }
+
+    getByUrl(url){
+        return new Promise((resolve, reject) => {
+            api.get(url).then(rest => {
+                return resolve(rest.data)
+            }).catch(e => {
+                return reject(e)
+            })
+        })
     }
 
     getInfo(region, method, values) {
         return new Promise((resolve, reject) => {
             if (this.configs.getCommonContents == true) {
                 if (method == 'common') {
-                    api.get(`https://s5.sir.sportradar.com/translations/common/en.5bc333c9e86aeb31125b4b35e9038eb5.json`).then((all) => {
+                    api.get(`https://s5.sir.sportradar.com/translations/common/en.${this.configs.languageId}.json`).then((all) => {
                         resolve(all.data)
                     }).catch((err) => {
                         reject(err)
@@ -145,7 +165,7 @@ class sportData {
                     resolve({ contents: null, status: 'Err', mensage: 'method Is invalid' })
                 }
             } else {
-                api.get(`${this.bettingHouse}/en/${region}/gismo/${method}/${values}`).then((data) => {
+                api.get(`${this.bettingHouse}/${this.configs.lang || 'en'}/${region}/${this.configs.server || 'gismo'}/${method}/${values}`).then((data) => {
                     resolve(data.data.doc[0])
                 }).catch((err) => {
                     reject(err)

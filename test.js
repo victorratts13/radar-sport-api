@@ -29,6 +29,6 @@ const bet365 = new sportApi('bet365', { getCommonContents: false });
 //     console.log(goals)
 // })
 
-// sport.getInfo('Europe:Berlin', 'stats_season_meta', 76415).then((data) => {
-//     console.log(data)
-// })
+sport.getInfo('Europe:Berlin', 'stats_season_meta', 76415).then((data) => {
+    console.log(data)
+})

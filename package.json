@@ -1,6 +1,6 @@
 {
   "name": "radar-sport-api",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "datas e estatisticas de das maiores casas de aposta",
   "main": "index.js",
   "scripts": {

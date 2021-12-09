@@ -1,5 +1,5 @@
 ![logo](https://github.com/victorratts13/radar-sport-api/blob/master/assets/img/radar-logo-2.png?raw=true)
-![versão](https://img.shields.io/badge/Vers%C3%A3o-1.0.0-brightgreen) ![lang](https://img.shields.io/badge/Language-JavaScript-yellowgreen) ![man](https://img.shields.io/badge/Mananger-NPM-red)
+![versão](https://img.shields.io/badge/Vers%C3%A3o-1.0.4-brightgreen) ![lang](https://img.shields.io/badge/Language-JavaScript-yellowgreen) ![man](https://img.shields.io/badge/Mananger-NPM-red)
 
 # Resumo
 Radar Sport API é uma biblioteca para desenvolvimento de dados e estatisticas de jogos e casas de apostas para desenvolvimento de sistemas automatizados e cruzamento de dados. Nele é encontrado os dados e estatisticas das maiores casas de apostas.
@@ -30,13 +30,13 @@ apos a instalação, importe a biblioteca e defina a sua betPlace
 
 ~~~javascript
 //importe as bibliotecas de classe
-const {sportApi, sportData} = require('radar-sport-api');
+const { sportApi } = require('radar-sport-api');
 //contrua as classes
 const betfair = new sportApi('betfair', { getCommonContents: false });
 const bet365 = new sportApi('bet365', { getCommonContents: false });
 ~~~
 
->- OBS: ```getCommonContents``` é um metodo ultilizado para obter os statos de servidores da sua casa de aposta. Caso haja necessidade de ultilizar, defina como ```true```
+>- OBS: ```getCommonContents``` é um metodo ultilizado para obter os "status" de servidores da sua casa de aposta. Caso haja necessidade de ultilizar, defina como ```true```
 
 ## Requisitando dados
 
@@ -202,12 +202,27 @@ para api de analise informações em massa, utilize a classe ``sportData`` para 
 
 ```js
 //importe as bibliotecas de classe
-const {sportApi, sportData} = require('radar-sport-api');
+const { sportData } = require('radar-sport-api');
 //contrua as classes
-const betfair = new sportData('betfair', { getCommonContents: false });
+const betfair = new sportData('betfair', { 
+  languageId: '514d1e14ad5c11eeebf17ba7f5dc97ad', 
+  server: 'gismo', 
+  getCommonContents: false, 
+  lang: 'en'
+});
 
 betfair.getInfo('Europe:Berlin', 'stats_season_meta', 76415).then((data) => {
     console.log(data)
+})
+```
+
+## Obtendo dados atraves de um path especifico.
+
+Caso conheça as rotas de indexação da S5 do [sport-radar](https://s5.sir.sportradar.com/), você pode obter as informações necessarias atraves de um path especifico.
+
+```js
+betfair.getByPath('en/America:Montevideo/gismo/config_tree_mini/41/0/16').then(data => {
+  console.log(data)
 })
 ```
 
