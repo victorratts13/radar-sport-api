@@ -1,8 +1,8 @@
-const {sportApi, sportData} = require('./index');
+const { sportApi, sportData } = require('./index');
 
 const betfair = new sportApi('betfair', { getCommonContents: false });
 const bet365 = new sportApi('bet365', { getCommonContents: false });
-
+const sport = new sportData('bet365', { getCommonContents: false });
 //sport.bettingHouse()
 
 // sport.allDefinitions('frame_data_id').then((all) => {
