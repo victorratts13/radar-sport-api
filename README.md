@@ -3,11 +3,11 @@
 
 # Resumo
 Radar Sport API é uma biblioteca para desenvolvimento de dados e estatisticas de jogos e casas de apostas para desenvolvimento de sistemas automatizados e cruzamento de dados. Nele é encontrado os dados e estatisticas das maiores casas de apostas.
-com ele é possivel obter dados de times, ligas, informações de jogos (passados ao vivo ou futuros) e com amplo esquema estatisticas.
+Com ele é possivel obter dados de times, ligas, informações de jogos (passados ao vivo ou futuros) e com amplo esquema estatisticas.
 
 ## Casas de aposta suportadas
 
-é possivel obter dados e analises de diversas casas de apostas como:
+É possivel obter dados e analises de diversas casas de apostas como:
 
 - bet365
 - betway
@@ -18,15 +18,15 @@ com ele é possivel obter dados de times, ligas, informações de jogos (passado
 - 888sport
 - sportingbet
 
-## instalação
-Para instalar ultilize o npm gerenciar os pacotes
+## Instalação
+Para instalar utilize o gerenciador de pacotes npm
 ~~~bash
 ~$ npm install radar-sport-api --save
 ~~~
 
-## configuração da casa de aposta
+## Configuração da casa de aposta
 
-apos a instalação, importe a biblioteca e defina a sua betPlace
+Após a instalação, importe a biblioteca e defina a sua betPlace
 
 ~~~javascript
 //importe as bibliotecas de classe
@@ -36,21 +36,22 @@ const betfair = new sportApi('betfair', { getCommonContents: false });
 const bet365 = new sportApi('bet365', { getCommonContents: false });
 ~~~
 
->- OBS: ```getCommonContents``` é um metodo ultilizado para obter os "status" de servidores da sua casa de aposta. Caso haja necessidade de ultilizar, defina como ```true```
+>- OBS: ```getCommonContents``` é um metodo ultilizado para obter os "status" de servidores da sua casa de aposta. Caso haja necessidade de utilizar, defina como ```true```
 
 ## Requisitando dados
 
-a requisição de dados é feita de forma simples. Definindo 
+A requisição de dados é feita de forma simples. Definindo 
 - Região
-- metodo
-- valor
+- Metodo
+- Valor
 
-onde: 
-*Methodo* é o dado q se deseja obter ou endpoind a acessar
-*Região* é a hora regional q se deseja obter
-*valor* é o valor é chave ou Id de requisição.
+Sendo: \
+*Metodo* : o dado q se deseja obter ou endpoind a acessar; \
+*Região* : a hora regional q se deseja obter; \
+*Valor*  : é o valor é chave ou Id de requisição.
 
-para isso, execute como exemplo:
+
+Para isso, execute como exemplo:
 
 ~~~javascript
 betfair.getInfo('Europe:Berlin', 'stats_season_meta', 76415).then((data) => {
@@ -58,7 +59,7 @@ betfair.getInfo('Europe:Berlin', 'stats_season_meta', 76415).then((data) => {
 })
 ~~~
 
-você obterá isso: 
+Você obterá isso: 
 ~~~node
 {
   event: 'stats_season_meta',
@@ -150,7 +151,7 @@ você obterá isso:
 ~~~
 ## Lista de Esportes
 
-cada esporte, possui uma id que por definição, executa cunções de dentro da api para a biblioteca. Aqui está uma lista de Esportes e suas IDs
+Cada esporte, possui uma id que por definição, executa funções de dentro da api para a biblioteca. Aqui está uma lista de Esportes e suas IDs
 
 esporte | id
 --------|-----
@@ -198,7 +199,7 @@ Europe:Berlin | GMT+2
 
 ## Metodo ``sportData`` Para analise de dados
 
-para api de analise informações em massa, utilize a classe ``sportData`` para obter as informações que precisa.
+Para api de analise informações em massa, utilize a classe ``sportData`` para obter as informações que precisa.
 
 ```js
 //importe as bibliotecas de classe
@@ -230,5 +231,5 @@ betfair.getByPath('en/America:Montevideo/gismo/config_tree_mini/41/0/16').then(d
 
 Para mais informações:
 
-> Telegram: @VictorRatts
-> email: victor.ratts13@gmail.com
+> Telegram: @VictorRatts \
+> Email: victor.ratts13@gmail.com
