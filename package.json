@@ -32,6 +32,6 @@
   },
   "homepage": "https://github.com/victorratts13/radar-sport-api#readme",
   "dependencies": {
-    "axios": "^0.22.0"
+    "axios": "^1.6.0"
   }
 }
