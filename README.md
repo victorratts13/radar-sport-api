@@ -231,5 +231,5 @@ betfair.getByPath('en/America:Montevideo/gismo/config_tree_mini/41/0/16').then(d
 
 Para mais informações:
 
-> Telegram: @VictorRatts \
-> Email: victor.ratts13@gmail.com
+> Telegram: @vratts \
+> Email: victor@vratts.com
